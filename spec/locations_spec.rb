@@ -2,6 +2,9 @@ require('rspec')
 require('location')
 
 describe(Location) do
+  before() do
+    Location.clear()
+  end
   describe('#description') do
     it('name a place that user inputted') do
       test_place = Location.new('London')
@@ -22,6 +25,11 @@ describe(Location) do
       expect(Location.all()).to(eq([test_place]))
     end
   end
-
-
+  describe('.clear') do
+    it('empties out all saved locations') do
+      Location.new('Portland').save()
+      Location.clear()
+      expect(Location.all()).to(eq([]))
+    end
+  end
 end

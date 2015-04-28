@@ -16,5 +16,7 @@ class Location
   define_method(:save) do
     @@locations.push(self)
   end
-
+  define_singleton_method(:clear) do
+    @@locations = []
+  end
 end
