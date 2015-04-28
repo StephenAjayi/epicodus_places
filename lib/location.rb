@@ -8,7 +8,13 @@ class Location
   define_method(:description) do
     @place
   end
+
   define_singleton_method(:all) do
-  []
+  @@locations
   end
+
+  define_method(:save) do
+    @@locations.push(self)
+  end
+
 end
