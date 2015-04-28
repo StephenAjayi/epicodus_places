@@ -8,5 +8,7 @@ class Location
   define_method(:description) do
     @place
   end
-  
+  define_singleton_method(:all) do
+  []
+  end
 end

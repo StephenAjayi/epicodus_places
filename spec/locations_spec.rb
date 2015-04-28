@@ -8,6 +8,11 @@ describe(Location) do
       expect(test_place.description()).to(eq("London"))
     end
   end
+  describe('.all') do
+  it("its empty at first") do
+      expect(Location.all()).to(eq([]))
+  end
+end
 
 
 
